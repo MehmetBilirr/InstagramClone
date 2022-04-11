@@ -76,6 +76,7 @@
                             <constraint firstItem="tMm-22-kWJ" firstAttribute="baseline" secondItem="kqp-HV-4oa" secondAttribute="baseline" id="xDJ-8D-XRf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2Y2-Q4-sCg"/>
                     <connections>
                         <outlet property="emailText" destination="FfL-Pj-XZl" id="H0u-9j-99R"/>
                         <outlet property="passwordText" destination="6GQ-Db-Gq9" id="3gv-br-yTp"/>
@@ -93,14 +94,28 @@
                     <view key="view" contentMode="scaleToFill" id="DbH-sL-dfr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rli-6S-gO9">
+                                <rect key="frame" x="134" y="513" width="146" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signoutClicked:" destination="Kw4-zV-617" eventType="touchUpInside" id="bqH-p5-hkE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="e2m-hJ-ux4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="MyV-lR-wyY"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="hGa-cU-rdq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znz-vO-eSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1280" y="609"/>
+            <point key="canvasLocation" x="1279.7101449275362" y="608.70535714285711"/>
         </scene>
         <!--Upload-->
         <scene sceneID="NL9-aB-5Gn">
