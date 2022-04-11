@@ -6,24 +6,73 @@
 //
 
 import UIKit
+import Firebase
 
-class UploadViewController: UIViewController {
+class UploadViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var commentText: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        imageView.isUserInteractionEnabled = true
+        let imageRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        imageView.addGestureRecognizer(imageRecognizer)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func chooseImage(){
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true)
+        }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true)
     }
-    */
+    
+    
+    
+    
+    @IBAction func uploadButtonClicked(_ sender: Any) {
+        
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        
+        let mediaFolder = storageReference.child("media")
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5){
+            
+            let uuid = UUID().uuidString
+            let imageFolder = mediaFolder.child("\(uuid).jpg")
+            imageFolder.putData(data, metadata: nil) { metadata, error in
+                if error != nil {
+                    
+                    self.alert(titleId: "Error", MessageId: error?.localizedDescription ?? "Error")
+                }else {
+                    
+                    imageFolder.downloadURL { url, error in
+                        let imageUrl = url?.absoluteString
+                        
+                        
+                        
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    func alert(titleId : String, MessageId : String){
+        
+        let alert = UIAlertController(title: titleId, message: MessageId, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
+   
 
 }
