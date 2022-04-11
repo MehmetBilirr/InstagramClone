@@ -11,6 +11,7 @@ import Firebase
 class MainCell: UITableViewCell {
 
     
+    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -29,6 +30,13 @@ class MainCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func likeButtonClicked(_ sender: Any) {
+        
+        let firestore = Firestore.firestore()
+        if let likeCount = Int(likeLabel.text!){
+            let likeStore = ["like" : likeCount+1] as [String:Any]
+            firestore.collection("Posts").document(idLabel.text!).setData(likeStore, merge: true)
+            
+        }
     }
     
 }

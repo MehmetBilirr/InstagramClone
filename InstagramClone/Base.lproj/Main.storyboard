@@ -240,6 +240,13 @@
                                                         <constraint firstAttribute="height" constant="170" id="rbS-ni-bYR"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWa-Tu-pJX">
+                                                    <rect key="frame" x="326" y="11" width="15" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lMb-Et-fRD" firstAttribute="top" secondItem="O3h-No-XrI" secondAttribute="topMargin" constant="-7" id="17O-7S-1Fn"/>
@@ -260,6 +267,7 @@
                                         <connections>
                                             <outlet property="commentLabel" destination="10v-n2-sNu" id="JKE-J6-oYe"/>
                                             <outlet property="emailLabel" destination="lMb-Et-fRD" id="fLY-C0-e1I"/>
+                                            <outlet property="idLabel" destination="WWa-Tu-pJX" id="WLo-zg-oKm"/>
                                             <outlet property="likeLabel" destination="6tT-Ai-55F" id="VaY-Tf-kkB"/>
                                             <outlet property="userImage" destination="kz1-NL-6Dp" id="bfA-3R-GdU"/>
                                         </connections>

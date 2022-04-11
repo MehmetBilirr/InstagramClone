@@ -33,6 +33,7 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.commentLabel.text = userCommentArray[indexPath.row]
         cell.likeLabel.text = String(likeArray[indexPath.row])
         cell.userImage.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
+        cell.idLabel.text = documentIdArray[indexPath.row]
 
         return cell
     }
@@ -45,10 +46,17 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             }else {
                 if snapshot?.isEmpty != true && snapshot != nil {
                     
+                    self.postedByArray.removeAll(keepingCapacity: false)
+                    self.userCommentArray.removeAll(keepingCapacity: false)
+                    self.likeArray.removeAll(keepingCapacity: false)
+                    self.documentIdArray.removeAll(keepingCapacity: false)
+                    self.userImageArray.removeAll(keepingCapacity: false)
+                    
                     
                     for document in snapshot!.documents {
                         
                         if let documentId = document.documentID as? String {
+                            self.documentIdArray.append(documentId)
                             
                             
                         }
