@@ -14,6 +14,9 @@
 		F0C116302804AA9F00551CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C1162F2804AA9F00551CB8 /* Assets.xcassets */; };
 		F0C116332804AA9F00551CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C116312804AA9F00551CB8 /* LaunchScreen.storyboard */; };
 		F0C1163B2804AB1500551CB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0C1163A2804AB1500551CB8 /* GoogleService-Info.plist */; };
+		F0C1163D2804B08D00551CB8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1163C2804B08D00551CB8 /* MainViewController.swift */; };
+		F0C1163F2804B09C00551CB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1163E2804B09C00551CB8 /* SettingsViewController.swift */; };
+		F0C116412804B0A800551CB8 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C116402804B0A800551CB8 /* UploadViewController.swift */; };
 		FCCAB885B5C8A3468D702414 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249AF4982D118A8697D96831 /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		F0C116322804AA9F00551CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0C116342804AA9F00551CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0C1163A2804AB1500551CB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F0C1163C2804B08D00551CB8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F0C1163E2804B09C00551CB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F0C116402804B0A800551CB8 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +56,6 @@
 				281E0AF99EDC4FE4F06B1BA2 /* Pods-InstagramClone.debug.xcconfig */,
 				5A2EB848BE24778F5B2628E2 /* Pods-InstagramClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +91,9 @@
 				F0C116262804AA9E00551CB8 /* AppDelegate.swift */,
 				F0C116282804AA9E00551CB8 /* SceneDelegate.swift */,
 				F0C1162A2804AA9E00551CB8 /* ViewController.swift */,
+				F0C1163C2804B08D00551CB8 /* MainViewController.swift */,
+				F0C1163E2804B09C00551CB8 /* SettingsViewController.swift */,
+				F0C116402804B0A800551CB8 /* UploadViewController.swift */,
 				F0C1162C2804AA9E00551CB8 /* Main.storyboard */,
 				F0C1162F2804AA9F00551CB8 /* Assets.xcassets */,
 				F0C116312804AA9F00551CB8 /* LaunchScreen.storyboard */,
@@ -212,8 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C1162B2804AA9E00551CB8 /* ViewController.swift in Sources */,
+				F0C116412804B0A800551CB8 /* UploadViewController.swift in Sources */,
 				F0C116272804AA9E00551CB8 /* AppDelegate.swift in Sources */,
 				F0C116292804AA9E00551CB8 /* SceneDelegate.swift in Sources */,
+				F0C1163F2804B09C00551CB8 /* SettingsViewController.swift in Sources */,
+				F0C1163D2804B08D00551CB8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
